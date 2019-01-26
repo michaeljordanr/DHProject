@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">DHProject</string>
+
+    <string name="real_symbol">R$</string>
+    <string name="my_heroes">Meus heróis</string>
+    <string name="image">imagem</string>
+    <string name="per_night">por noite</string>
+    <string name="talk_bt_label">Conversar</string>
+    <string name="book_bt_label">Reservar de novo</string>
+    <string name="hosted_heroes_title">Heróis com quem hospedei</string>
+    <string name="favorites_heroes_title">Heróis favoritos</string>
+</resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/gray_EFF0F2">
+
+                <TextView
+                    android:id="@+id/txt_hosted_heroes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@android:color/transparent"
+                    android:text="@string/hosted_heroes_title"
+                    android:textColor="@color/list_title"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_hosted_heroes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_hosted_heroes" />
+
+                <TextView
+                    android:id="@+id/txt_fav_heroes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@android:color/transparent"
+                    android:text="@string/favorites_heroes_title"
+                    android:textColor="@color/list_title"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/rv_hosted_heroes"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_hosted_heroes" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_fav_heroes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="@+id/txt_fav_heroes"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_fav_heroes" />
+
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

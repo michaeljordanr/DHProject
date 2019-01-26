@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_host"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/iv_badge"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/host_list_icon_badge"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_host"
+            app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+        <TextView
+            android:id="@+id/txt_host_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:textColor="@color/gray_A6000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/iv_host"
+            app:layout_constraintTop_toTopOf="@+id/iv_host"
+            tools:text="Alex" />
+
+        <TextView
+            android:id="@+id/txt_host_neighborhood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray_66000000"
+            app:layout_constraintStart_toStartOf="@+id/txt_host_name"
+            app:layout_constraintTop_toBottomOf="@+id/txt_host_name"
+            tools:text="Vila Mariana" />
+
+        <RatingBar
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/ratingBarStyleSmall"
+            android:numStars="5"
+            android:stepSize="0.1"
+            android:isIndicator="true"
+            app:layout_constraintTop_toBottomOf="@+id/txt_host_neighborhood"
+            app:layout_constraintStart_toStartOf="@+id/txt_host_neighborhood"/>
+
+        <ToggleButton
+            android:id="@+id/bt_favorite"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/bt_fav"
+            android:checked="false"
+            android:text=""
+            android:textOff=""
+            android:textOn=""
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_host_name" />
+
+        <TextView
+            android:id="@+id/txt_host_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/bt_favorite"
+            app:layout_constraintTop_toBottomOf="@+id/bt_favorite"
+            tools:text="R$70" />
+
+        <TextView
+            android:id="@+id/txt_per_night_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/per_night"
+            app:layout_constraintEnd_toEndOf="@+id/txt_host_price"
+            app:layout_constraintTop_toBottomOf="@+id/txt_host_price" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintStart_toStartOf="@+id/iv_host"
+            app:layout_constraintTop_toBottomOf="@+id/iv_host"
+            app:layout_constraintWidth_default="percent">
+
+            <Button
+                android:id="@+id/bt_talk"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_white"
+                android:text="@string/talk_bt_label"
+                android:textAllCaps="false"
+                android:textColor="@color/gray_A6000000"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.4" />
+
+            <Button
+                android:id="@+id/bt_book_again"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/bg_rounded_pink"
+                android:text="@string/book_bt_label"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/bt_talk"
+                app:layout_constraintTop_toTopOf="@+id/bt_talk"
+                app:layout_constraintWidth_percent="0.58" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="64dp" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
